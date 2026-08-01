@@ -1,0 +1,16 @@
+# Copy this to `terraform.tfvars` (which is git-ignored) and set your real values:
+#     cp terraform.tfvars.example terraform.tfvars
+#
+# REQUIRED — where budget & cost-anomaly alert emails go:
+alert_email = "you@example.com"
+
+# Optional overrides (defaults shown):
+# project_name       = "tlc-lakehouse"
+# aws_region         = "us-east-1"
+# monthly_budget_usd = 30
+# daily_budget_usd   = 3
+
+# Warehouse (P19/P20) — keep OFF except during the Redshift session, then turn OFF
+# again (deletes it; storage bills 24/7). When true, set a strong password.
+# enable_redshift         = false
+# redshift_admin_password = "Choose_a_Strong_Pass1"

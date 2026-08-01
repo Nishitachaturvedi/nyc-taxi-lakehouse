@@ -1,0 +1,36 @@
+# ─── Terraform ────────────────────────────────────────────────────────────────
+# Local .terraform directories (downloaded providers/modules — large, machine-specific)
+**/.terraform/*
+
+# State files — can contain secrets; NEVER commit (they live in S3 remotely)
+*.tfstate
+*.tfstate.*
+
+# Crash log files
+crash.log
+crash.*.log
+
+# Variable files with real/secret values — commit only the *.example template
+*.tfvars
+*.tfvars.json
+!*.tfvars.example
+
+# Terraform lock info & CLI config
+.terraformrc
+terraform.rc
+override.tf
+override.tf.json
+*_override.tf
+*_override.tf.json
+
+# ─── AWS / secrets ────────────────────────────────────────────────────────────
+# Never commit credentials
+.aws/
+*.pem
+*accessKeys*.csv
+credentials
+
+# ─── OS / editor noise ────────────────────────────────────────────────────────
+.DS_Store
+.vscode/
+.idea/
