@@ -30,6 +30,12 @@ override.tf.json
 *accessKeys*.csv
 credentials
 
+# ─── Local data & Python (not committed — large / machine-specific) ────────────
+foundations/data/
+.venv/
+__pycache__/
+*.pyc
+
 # ─── OS / editor noise ────────────────────────────────────────────────────────
 .DS_Store
 .vscode/
