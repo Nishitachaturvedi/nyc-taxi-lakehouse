@@ -3,7 +3,10 @@ resource "aws_athena_workgroup" "main" {
 
 
   configuration {
-    enforce_workgroup_configuration    = true
+    # false = workgroup settings are DEFAULTS (still applied to normal queries),
+    # but a CTAS may write to its own external_location (e.g. silver/). With `true`,
+    # Athena blocks external_location and forces all output to athena-results/.
+    enforce_workgroup_configuration    = false
     publish_cloudwatch_metrics_enabled = true
     bytes_scanned_cutoff_per_query      = 1073741824
 
