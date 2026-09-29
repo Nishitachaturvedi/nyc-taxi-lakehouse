@@ -32,9 +32,16 @@ credentials
 
 # ─── Local data & Python (not committed — large / machine-specific) ────────────
 foundations/data/
-.venv/
+.venv*/
 __pycache__/
 *.pyc
+
+# ─── dbt (generated build artifacts + connection secrets) ───────────────────────
+dbt/target/
+dbt/logs/
+dbt/dbt_packages/
+profiles.yml            # real connection config (commit only profiles.yml.example)
+!profiles.yml.example
 
 # ─── OS / editor noise ────────────────────────────────────────────────────────
 .DS_Store

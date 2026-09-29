@@ -1,0 +1,16 @@
+
+name: "tlc_lakehouse"
+version: "1.0.0"
+profile: "tlc_lakehouse" 
+
+model-paths: ["models"]
+
+models:
+  tlc_lakehouse:
+    staging:
+      
+      +materialized: view
+    marts:
+      
+      +materialized: table
+      +format: parquet

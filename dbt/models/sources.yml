@@ -1,0 +1,9 @@
+version: 2
+
+sources:
+  - name: nyc_taxi
+    schema: nyc_taxi
+    description: "Lakehouse bronze tables (Glue Data Catalog)."
+    tables:
+      - name: yellow_tripdata
+      - name: taxi_zone_lookup

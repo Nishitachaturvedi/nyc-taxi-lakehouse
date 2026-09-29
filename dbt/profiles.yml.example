@@ -1,0 +1,13 @@
+# Copy to ~/.dbt/profiles.yml (or run with --profiles-dir .) and fill in <LAKE_BUCKET>.
+# Requires: pip install dbt-athena-community
+tlc_lakehouse:
+  target: dev
+  outputs:
+    dev:
+      type: athena
+      s3_staging_dir: s3://<LAKE_BUCKET>/athena-results/
+      region_name: us-east-1
+      database: awsdatacatalog   # Athena's catalog name in dbt
+      schema: nyc_taxi           # the Glue database our models write to
+      work_group: tlc-lakehouse-wg
+      threads: 4

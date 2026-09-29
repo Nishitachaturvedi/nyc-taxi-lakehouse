@@ -1,0 +1,24 @@
+version: 2
+
+models:
+  - name: stg_taxi_zone_lookup
+    description: "Cleaned, typed taxi zone lookup (staging view over bronze)."
+    columns:
+      - name: location_id
+        description: "Zone id (business key)."
+        tests:
+          - not_null
+          - unique
+      - name: borough
+        tests:
+          - not_null
+
+  - name: stg_yellow_tripdata
+    description: "Cleaned yellow taxi trips (staging view over bronze)."
+    columns:
+      - name: pulocationid
+        tests:
+          - not_null
+      - name: fare_amount
+        tests:
+          - not_null

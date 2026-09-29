@@ -1,0 +1,12 @@
+version: 2
+
+models:
+  - name: gold_daily_borough
+    description: "Daily revenue/trips per borough (grain: trip_date x borough)."
+    columns:
+     - name: trip_date
+       test: 
+       - not_null
+     - name: borough
+       test:
+       - not_null
